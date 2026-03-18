@@ -1,31 +1,12 @@
-import './App.css'
-const specialty = 'React';
-function Greeting(props) {
-  return <h1>My specialty is {props.name}.</h1>;
+﻿import './App.css';
+import SignupForm from './components/SignUpForm.jsx';
 
-}
 function App() {
-  const showGreeting = true;
-  function toggleGreeting() {
-    if (showGreeting) {
-      showGreeting = false;
-    } else {
-      showGreeting = true;
-    }
-  }
-  return( 
-    
-    <div> 
-       <button onClick={toggleGreeting}>click me</button>
-    {showGreeting && <Greeting name={"python"} />}
-  
-  </div>
-
-
-  )
-    
-  
+  return (
+    <div>
+      <SignupForm />
+    </div>
+  );
 }
 
-
-export default App
+export default App;
