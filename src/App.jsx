@@ -3,8 +3,10 @@ import Home from "./assets/pages/Home.jsx";
 import Auth from "./assets/pages/auth.jsx";
 import Checkout from "./assets/pages/Checkout.jsx";
 import Navbar from "./components/Navbar";
+import AuthProvider from "./context/AuthContext.jsx";
 function App() {
   return (
+    <AuthProvider>
     <div className="App">
       <Navbar />
       <Routes>
@@ -13,6 +15,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
+    </AuthProvider>
   );
 }
 
