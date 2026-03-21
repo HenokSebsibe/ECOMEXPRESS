@@ -3,8 +3,7 @@ import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/prodaucts";
 export default function Home() {
-    const products = getProducts();
-         
+    const products = getProducts(); 
         
     return (
         <div  className="page">
