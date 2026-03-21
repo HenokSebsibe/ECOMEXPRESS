@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const AuthContext = createContext(null);
+  export const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState( localStorage.getItem("currentUserEmail") ? { email: localStorage.getItem("currentUserEmail") } : null );
@@ -30,7 +30,7 @@ export default function AuthProvider({ children }) {
               }
               setUser({ email });
               return  {success:true}
-       }
+      }
     function logout() {
       localStorage.removeItem("currentUserEmail");
       setUser(null);
@@ -42,4 +42,10 @@ export default function AuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
+}
+
+export function useAuth() {
+const context = useContext(AuthContext);
+  return context;
+
 }

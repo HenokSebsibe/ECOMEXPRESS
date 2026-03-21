@@ -24,15 +24,12 @@ export default function Auth() {
     } else {
       setError(result.message);
     }
-    console.log(result);
   }
 
   return (
     <div className="page">
       <div className="container">
         <div className="auth-container">
-          {user && <p>User Logged In {user.email}!</p>}
-          <button onClick={logout}>Log Out</button>
           <h1 className="page-title">
             {mode === "signup" ? "Sign Up" : "Log In"}
           </h1>
