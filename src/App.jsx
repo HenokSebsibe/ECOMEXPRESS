@@ -8,6 +8,7 @@ import ProductDetails from "./assets/pages/ProductsDetail.jsx.jsx";
 function App() {
   return (
     <AuthProvider>
+      <cartProvider>
     <div className="App">
       <Navbar />
       <Routes>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
     </div>
+    </cartProvider>
     </AuthProvider>
   );
 }
