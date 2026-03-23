@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProductById } from "../../data/products"; // adjust path
 import { useCart } from "../../context/cartContent";
-
+// import "./ProductsDetail.css"; // adjust path
 export default function ProductDetails() {
     const{addToCarts,cartItems}=useCart();
     const productInCart = cartItems.find(item => item.productId === id);
