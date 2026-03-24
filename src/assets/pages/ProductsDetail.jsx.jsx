@@ -4,11 +4,11 @@ import { getProductById } from "../../data/products"; // adjust path
 import { useCart } from "../../context/cartContent";
 // import "./ProductsDetail.css"; // adjust path
 export default function ProductDetails() {
-    const{addToCarts,cartItems}=useCart();
-    const productInCart = cartItems.find(item => item.productId === id);
-
-    const productQualityLabel = productInCart ? `(${productInCart.quantity})` : "";
   const { id } = useParams();
+  const { addToCart, cartItems } = useCart();
+
+  const productInCart = cartItems.find(item => item.productId === id);
+  const productQualityLabel = productInCart ? `(${productInCart.quantity})` : "";
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
 

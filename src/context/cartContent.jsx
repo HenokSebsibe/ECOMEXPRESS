@@ -7,13 +7,12 @@ export default function CartProvider({ children }) {
 
     function addToCart(productId) {
       const existingItem = cartItems.find(item => item.productId === productId);
-      if (existing){
+      if (existingItem){
         const currentQuantity = existingItem.quantity;
-        const UpdatedCartItems = cartItems.map(item => item === productId ? {id: productId, quantity: currentQuantity+1} : item);
-        setCartItems(UpdatedCartItems);
-      }else{
-        cartItems.push({ productId, quantity: 1 });
-        setCartItems([...cartItems ,{ productId, quantity: 1 }]);
+        const updatedCartItems = cartItems.map(item => item.productId === productId ? { productId, quantity: currentQuantity + 1 } : item);
+        setCartItems(updatedCartItems);
+      } else {
+        setCartItems([...cartItems, { productId, quantity: 1 }]);
       }
     }
     return <CartContext.Provider value={{ cartItems, addToCart }}>
