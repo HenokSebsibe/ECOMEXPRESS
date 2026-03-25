@@ -18,7 +18,7 @@ const productInCart = cartItems.find(item => item.productId === Number(id));
   useEffect(() => {
     const foundProduct = getProductById(id);
     if (!foundProduct) {
-      navigate("/"); 
+      navigate("/");  
       return;
     }
     setProduct(foundProduct);
