@@ -20,7 +20,7 @@ export default function AuthProvider({ children }) {
     setUser( {email} );
     return {success: true, message: "User created successfully"};
   }
-
+  
   function login( email, password) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find((u) => email === u.email && password === u.password);

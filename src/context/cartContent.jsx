@@ -42,7 +42,11 @@ export default function CartProvider({ children }) {
     return total;
   }
 
-    return <CartContext.Provider value={{ cartItems, addToCart , getCartItemsWithProducts, removeFromCart, updateQuantity,getCartTotal}}>
+  function clearCart() {
+    setCartItems([]);
+  }
+
+    return <CartContext.Provider value={{ cartItems, addToCart , getCartItemsWithProducts, removeFromCart, updateQuantity,getCartTotal, clearCart}}>
       {children}
     </CartContext.Provider>
   }

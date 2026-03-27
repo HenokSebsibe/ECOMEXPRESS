@@ -1,15 +1,17 @@
 import { useCart } from "../../context/cartContent";
 
 export default function Checkout() {
-    const {getCartItemsWithProducts, removeFromCart, updateQuantity, getCartTotal} = useCart();
+    const {getCartItemsWithProducts, removeFromCart, updateQuantity, getCartTotal, clearCart} = useCart();
 
     const cartItems = getCartItemsWithProducts();
     const total = getCartTotal();
 
     const placeOrder = () => {
         alert('Order placed successfully!');
+        clearCart();
         // Here you could clear the cart or navigate to a confirmation page
     };
+   
 
     return (
         <div className="page">
